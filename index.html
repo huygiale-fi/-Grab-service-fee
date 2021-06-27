@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CodePro.vn - CyberSoft.edu.vn </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="./images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./vendor/animate/animate.css">
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+    <div class="container-contact100">
+
+        <div class="wrap-contact100">
+
+
+            <div>
+
+                <span class="contact100-form-title">
+					TÍNH CƯỚC GRAB
+				</span>
+                <h2>Vui lòng chọn loại xe:</h2>
+                <div id="grab">
+                    <div class=" form-check form-check-inline mr-5">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="grabcar" value="Grab Car" checked>
+                        <label class="form-check-label" for="grabcar">Grab Car</label>
+                    </div>
+                    <div class=" form-check form-check-inline mr-5">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="grabsuv" value="Grab Suv">
+                        <label class="form-check-label" for="grabsuv">Grab Suv</label>
+                    </div>
+                    <div class=" form-check form-check-inline mr-5">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="grabblack" value="Grab Black">
+                        <label class="form-check-label" for="grabblack">Grab Black</label>
+                    </div>
+                </div>
+
+            </div>
+            <div style="clear:both;"></div>
+
+            <form id="formbody" class="contact100-form">
+                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <h2>Tên Khách Hàng </h2>
+                    <input id="tenkh" class="input100" type="text" name="name" placeholder="Tên của bạn ..." required>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <h2>Nhập vào số KM </h2>
+                    <input id="km" class="input100" type="text" name="name" placeholder="Số KM ..." required>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <h2>Nhập thời gian chờ </h2>
+                    <input id="tgcho" class="input100" type="text" name="name" placeholder="Thời gian chờ  ..." required>
+                    <span class="focus-input100"></span>
+
+                </div>
+
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <button onclick="tinhtien()" type="button" class="contact100-form-btn">
+						TÍNH TIỀN
+					</button>
+                </div>
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <button id="hoadon" type="button" class="contact100-form-btn" data-toggle="modal" data-target="#exampleModal">
+						IN HÓA ĐƠN
+					</button>
+                </div>
+            </form>
+
+            <div style="clear:both"></div>
+            <div id="divThanhTien" class="dongia">
+                <h2>Thành tiền:
+                    <span id="xuatTien" class="xuatTien"></span> vnd
+                </h2>
+            </div>
+        </div>
+        <div id="formhoadon" class="wrap-bill100">
+            <span class="contact100-form-title">
+                Chi Tiết Hóa Đơn 
+            </span>
+            <table class="table table-bordered">
+                <thead>
+                    <tr id="spantenkh"></tr>
+                    <tr id="spanloaixe"></tr>
+                    <tr>
+                        <th scope="col">Chi Tiết</th>
+                        <th scope="col">Sử Dụng</th>
+                        <th scope="col">Đơn Giá (1000đ)</th>
+                        <th scope="col">Thành Tiền (1000đ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">KM Đầu</th>
+                        <td id="spankmdau"></td>
+                        <td id="kmdau"></td>
+                        <td id="ttkmdau"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2km - 19km</th>
+                        <td id="spankmsau"></td>
+                        <td id="kmsau"></td>
+                        <td id="ttkmsau"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">>19km</th>
+                        <td id="spankmcuoi"></td>
+                        <td id="kmcuoi"></td>
+                        <td id="ttkmcuoi"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Thời gian chờ</th>
+                        <td id="spantgcho"></td>
+                        <td id="phitgcho"></td>
+                        <td id="tttgcho"></td>
+                    </tr>
+                    <tr>
+                        <th id="spanttien" colspan="4">Tổng tiền</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./js/Grab.js"></script>
+    <script src="./js/map-custom.js"></script>
+    <!--===============================================================================================-->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="./vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="./vendor/bootstrap/js/popper.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script> -->
+    <!-- <script src="./js/map-custom.js"></script> -->
+    <!--===============================================================================================-->
+
+
+
+
+
+</body>
+
+</html>
